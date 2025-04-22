@@ -1,0 +1,23 @@
+data_dir: /CAShift-Dataset/Template/train
+test_anomaly_dir: /CAShift-Dataset/Template/CVE-2019-5736
+test_normal_dir: /CAShift-Dataset/Template/test-normal
+
+embedding_file: embeddings.pt
+embedding_test_anomaly: test_anomaly_embeddings.pt
+embedding_test_normal: test_normal_embeddings.pt
+
+tokenizer: bert-base-uncased
+bert_model: bert-base-uncased
+
+lr: 1e-4
+bsz: 512
+num_epoch: 2
+
+window_size: 10
+use_template: true
+truncate_at: 50
+
+model: VAE
+
+feature_dir: /CAShift/Benchmark/NewFeaturesShortTemplate  # once data fixed, do not change
+exp_dir: /CAShift/Benchmark/exps/NewFeaturesShortTemplate  # for saving model, log, etc.

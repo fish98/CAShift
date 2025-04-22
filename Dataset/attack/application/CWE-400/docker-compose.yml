@@ -1,0 +1,22 @@
+version: '2.2'
+services:
+  wordpress:
+    image: wordpress
+    depends_on:
+      - wpsql
+    environment: 
+      - WORDPRESS_DB_HOST=wpsql:3306
+      - WORDPRESS_DB_USER=root
+      - WORDPRESS_DB_PASSWORD=wpsql
+      - WORDPRESS_DB_NAME=wpsql
+      - WORDPRESS_TABLE_PREFIX=wp_
+    ports:
+      - "80:80"
+  wpsql:
+    image: mysql:5.7
+    environment: 
+      - MYSQL_ROOT_PASSWORD=wpsql
+      - MYSQL_DATABASE=wpsql
+    ports:
+      - "3306:3306"
+  

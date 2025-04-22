@@ -1,0 +1,32 @@
+data_dir: /CAShift-Dataset/Base/train
+test_normal_dir: /CAShift-Dataset/Base/test-normal
+test_anomaly_dir: /CAShift-Dataset/Test-Attack/ATTACKHOLDER
+test_shift_dir: /CAShift-Dataset/SHIFTHOLDER/test-normal
+
+attack_spec: all
+shift_spec: all
+
+embedding_file: retrain_shift_embeddings_App-1
+embedding_test_anomaly: test_anomaly_embeddings
+embedding_test_normal: test_normal_embeddings
+embedding_test_shift: test_shift_embeddings
+
+tokenizer: bert-base-uncased
+bert_model: bert-base-uncased
+
+lr: 1e-3
+bsz: 512
+num_epoch: 10
+
+window_size: 80
+
+model: VAE
+
+feature_dir: /CAShift/Benchmark/RetrainFeature  # once data fixed, do not change
+test_feature_dir: /CAShift/Benchmark/FinalFeature  # if empty, use feature_dir
+exp_dir: /CAShift/Benchmark/exps/retrain  # for saving model, log, etc.
+
+resume: /CAShift/Benchmark/exps/v2
+score_file: /CAShift/Benchmark/exps/retrain/result_dict_HOLDER.pth
+percentage: 0.3
+head_or_tail: head

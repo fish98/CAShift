@@ -1,0 +1,14 @@
+.DS_Store
+output/
+test/
+test.ipynb
+__pycache__/
+test.sh
+data_process/data-test/
+*.ipynb
+parse_dataset_test.py
+crawl-300d-2M.vec
+kernel/
+*.deb
+k8spider/
+k8spider

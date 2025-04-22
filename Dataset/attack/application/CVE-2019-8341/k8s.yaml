@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jinja-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jinja
+  template:
+    metadata:
+      labels:
+        app: jinja
+    spec:
+      containers:
+      - name: jinja
+        image: vulhub/flask:1.1.1
+        ports:
+        - containerPort: 8000
+        volumeMounts:
+        - name: app-volume
+          mountPath: /app/
+      volumes:
+      - name: app-volume
+        hostPath:
+          path: /mnt/src/
+          type: Directory
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jinja
+  labels:
+    app: jinja
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 8000
+      protocol: TCP
+  selector:
+    app: jinja

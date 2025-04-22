@@ -1,0 +1,37 @@
+data_dir: /CAShift-Dataset/Base/train
+test_normal_dir: /CAShift-Dataset/Base/test-normal
+test_anomaly_dir: /CAShift-Dataset/Test-Attack/ATTACKHOLDER
+test_shift_dir: /CAShift-Dataset/SHIFTHOLDER/test-normal
+
+# attack_spec: all
+# shift_spec: all
+attack_spec: aggregated
+shift_spec: Version-1
+
+embedding_file: retrain_shift_embeddings_Version-1  # change this to use different shift_specs for retraining
+embedding_test_anomaly: test_anomaly_embeddings
+embedding_test_normal: test_normal_embeddings
+embedding_test_shift: test_shift_embeddings
+
+tokenizer: bert-base-uncased
+bert_model: bert-base-uncased
+
+lr: 1e-3
+bsz: 512
+num_epoch: 30
+
+window_size: 80
+
+model: AE # VAE
+
+feature_dir: /CAShift/Benchmark/RetrainFeature  # once data fixed, do not change
+test_feature_dir: /CAShift/Benchmark/FinalFeature  # if empty, use feature_dir
+# exp_dir: /CAShift/Benchmark/exps/after_retrain  # for saving model, log, etc.
+exp_dir: /CAShift/Benchmark/after_retrain_exps/version1_retrain  # for saving model, log, etc.
+
+# retrain config
+resume: /CAShift/Benchmark/exps/v2
+# score_file: /CAShift/Benchmark/exps/demo_retrain/result_dict_HOLDER.pth
+score_file: /CAShift/Benchmark/retrain_exps/version1_retrain/result_dict_HOLDER.pth
+percentage: 0.1
+head_or_tail: kmst # zol or gini or kmst
