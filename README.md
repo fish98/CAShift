@@ -60,6 +60,6 @@ Cite as below if you find this repository helpful to your project:
 
 ## Acknowledgement
 
-Many thanks to [Jiahao Ying](https://yingjiahao14.github.io/) for providing extra computing servers for the benchmarking experiments.
+Many thanks to [Ruozhao Yang](https://github.com/Richael-y) for helping with the construction of application-level attack artifacts and to [Dr. Jiahao Ying](https://yingjiahao14.github.io/) for providing extra computing servers for the benchmarking experiments.
 
 This research is partially supported by the Lee Kong Chian Fellowship, the National Research Foundation, Singapore, and the Cyber Security Agency under its National Cybersecurity R&D Programme (NCRP25-P04-TAICeN). Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not reflect the views of National Research Foundation, Singapore and Cyber Security Agency of Singapore.
